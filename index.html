@@ -3,10 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Surviving Fentanyl provides fentanyl education, prevention, recovery support, resources, and community outreach.">
-  <title>Surviving Fentanyl | Recovery Is Possible</title>
+
+  <title>Surviving Fentanyl | Lived Experience. Real Recovery.</title>
+
+  <meta name="description"
+        content="Surviving Fentanyl provides fentanyl education, overdose prevention, recovery resources, family support and community outreach built from lived experience.">
+
+  <meta name="theme-color" content="#050a08">
+
+  <meta property="og:title" content="Surviving Fentanyl">
+  <meta property="og:description"
+        content="Lived Experience. Real Recovery. A Way Forward.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://survivingfentanyl.org/">
+
+  <link rel="canonical" href="https://survivingfentanyl.org/">
 
   <style>
+    :root {
+      --green: #65ff70;
+      --green2: #25d94c;
+      --green-soft: #a5ffad;
+      --black: #030706;
+      --panel: rgba(4, 15, 12, .72);
+      --panel2: rgba(8, 22, 17, .88);
+      --white: #f7fff8;
+      --muted: #b9c8bf;
+      --line: rgba(101,255,112,.20);
+      --shadow: 0 20px 70px rgba(0,0,0,.55);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -15,222 +41,717 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+                   BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--white);
+      background: var(--black);
       line-height: 1.6;
-      color: #18222d;
-      background: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* FIXED SEATTLE BACKGROUND */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,8,5,.35),
+          rgba(0,8,5,.68) 50%,
+          rgba(0,5,3,.92)
+        ),
+        url("seattle-bg.jpg") center center / cover no-repeat;
+
+      transform: scale(1.03);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+
+      background:
+        radial-gradient(circle at 50% 20%,
+          rgba(55,255,90,.10),
+          transparent 35%),
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.42),
+          transparent 50%,
+          rgba(0,0,0,.38)
+        );
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(1180px, 91%);
       margin: auto;
     }
 
+    /* NAVIGATION */
+
     header {
-      background: #0d1720;
-      color: white;
-      padding: 18px 0;
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+
+      background: rgba(2,8,6,.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(101,255,112,.12);
     }
 
     nav {
+      min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 25px;
     }
 
     .brand {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: .04em;
+      text-decoration: none;
+      font-weight: 950;
+      letter-spacing: -.03em;
+      font-size: 1.15rem;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--green);
     }
 
     .nav-links {
-      display: flex;
-      gap: 22px;
       list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 26px;
     }
 
     .nav-links a {
-      color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-size: .92rem;
+      font-weight: 700;
+      color: #edf7ef;
+      transition: .2s ease;
     }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-help {
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #031006 !important;
+      box-shadow: 0 0 25px rgba(101,255,112,.25);
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
 
     .hero {
-      min-height: 78vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
-      background:
-        linear-gradient(135deg, rgba(8,18,27,.96), rgba(19,70,82,.90));
-      color: white;
-      text-align: center;
-      padding: 90px 0;
+      padding: 135px 0 80px;
+      position: relative;
     }
 
-    .hero-content {
-      max-width: 850px;
-      margin: auto;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 55px;
     }
 
     .eyebrow {
+      color: var(--green);
       text-transform: uppercase;
-      letter-spacing: .18em;
-      font-size: .8rem;
-      font-weight: 800;
-      color: #7ee2d1;
-      margin-bottom: 16px;
+      font-weight: 900;
+      letter-spacing: .19em;
+      font-size: .76rem;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(3rem, 9vw, 6rem);
-      line-height: .95;
-      margin-bottom: 24px;
-      letter-spacing: -.04em;
+      font-size: clamp(4rem, 9vw, 7.5rem);
+      line-height: .83;
+      letter-spacing: -.065em;
+      font-weight: 1000;
+      text-transform: uppercase;
+      text-shadow: 0 10px 40px rgba(0,0,0,.6);
     }
 
-    .hero h2 {
-      font-size: clamp(1.35rem, 4vw, 2rem);
-      margin-bottom: 18px;
-      font-weight: 600;
+    h1 span {
+      display: block;
+      color: var(--green);
+      text-shadow:
+        0 0 35px rgba(101,255,112,.22),
+        0 10px 40px rgba(0,0,0,.7);
     }
 
-    .hero p {
-      font-size: 1.12rem;
-      max-width: 700px;
-      margin: 0 auto 32px;
-      color: #dbe7ea;
+    .tagline {
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      font-weight: 800;
+      margin: 27px 0 12px;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      color: #d8e4db;
+      font-size: 1.08rem;
     }
 
     .buttons {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
+      margin-top: 32px;
     }
 
     .button {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 23px;
+      border-radius: 999px;
+      font-weight: 900;
       text-decoration: none;
+      transition: transform .2s ease,
+                  box-shadow .2s ease,
+                  background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
     }
 
     .primary {
-      background: #39c6ad;
-      color: #071a19;
+      background: var(--green);
+      color: #031006;
+      box-shadow: 0 0 35px rgba(101,255,112,.25);
+    }
+
+    .primary:hover {
+      box-shadow: 0 0 45px rgba(101,255,112,.42);
     }
 
     .secondary {
-      border: 2px solid white;
+      border: 1px solid rgba(255,255,255,.65);
+      background: rgba(0,0,0,.2);
       color: white;
+      backdrop-filter: blur(10px);
     }
 
-    .emergency {
-      background: #fff3f2;
-      border-left: 6px solid #b52b27;
-      padding: 24px;
-      margin: 40px auto;
-      border-radius: 8px;
+    .hero-quote {
+      justify-self: end;
+      max-width: 380px;
+      padding: 32px;
+
+      background: rgba(3,14,10,.52);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
     }
 
-    .emergency h2 {
-      color: #8c1e1a;
-      margin-bottom: 8px;
+    .hero-quote .quote {
+      font-size: clamp(1.7rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      font-weight: 700;
+      font-style: italic;
     }
 
-    section {
-      padding: 75px 0;
+    .hero-quote .accent-line {
+      width: 100px;
+      height: 4px;
+      margin-top: 22px;
+      background: var(--green);
+      border-radius: 999px;
+      box-shadow: 0 0 15px var(--green);
     }
 
-    section h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
+    /* HELP STRIP */
+
+    .help-strip {
+      position: relative;
+      z-index: 5;
+      margin-top: -35px;
+      margin-bottom: 60px;
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+
+      background: rgba(2,12,9,.90);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .help-item {
+      padding: 26px;
+      position: relative;
+    }
+
+    .help-item + .help-item {
+      border-left: 1px solid rgba(255,255,255,.12);
+    }
+
+    .help-label {
+      color: var(--green);
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .help-item.emergency .help-label {
+      color: #ff6767;
+    }
+
+    .help-number {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 950;
+      margin: 5px 0;
+      text-decoration: none;
+    }
+
+    .help-item p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 90px 0;
+    }
+
+    .glass-section {
+      background: linear-gradient(
+        180deg,
+        rgba(3,12,9,.70),
+        rgba(2,9,7,.83)
+      );
+
+      backdrop-filter: blur(7px);
+      border-top: 1px solid rgba(101,255,112,.08);
+      border-bottom: 1px solid rgba(101,255,112,.08);
+    }
+
+    .section-title {
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+      margin-bottom: 17px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* MISSION CARDS */
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .glass-card {
+      background: var(--panel);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 27px;
+
+      box-shadow: 0 18px 50px rgba(0,0,0,.25);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(101,255,112,.55);
+      box-shadow:
+        0 20px 55px rgba(0,0,0,.45),
+        0 0 25px rgba(101,255,112,.09);
+    }
+
+    .card-icon {
+      font-size: 2rem;
       margin-bottom: 18px;
     }
 
-    section p {
-      max-width: 760px;
-      font-size: 1.08rem;
+    .glass-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
     }
 
-    .light {
-      background: #f3f7f7;
+    .glass-card p {
+      color: var(--muted);
+      font-size: .95rem;
     }
 
-    .cards {
+    .card-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: .83rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* STORY */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .story-visual {
+      min-height: 480px;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.10),
+          rgba(0,0,0,.75)
+        ),
+        url("seattle-bg.jpg") center / cover;
+
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .story-visual::after {
+      content: "PEOPLE RECOVER.\\A COMMUNITIES HEAL.";
+      white-space: pre;
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+
+      color: var(--green);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .story-copy h2 {
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+      margin-bottom: 25px;
+    }
+
+    .story-copy p {
+      color: #d0ddd4;
+      margin-bottom: 18px;
+      font-size: 1.04rem;
+    }
+
+    .story-quote {
+      margin-top: 30px;
+      border-left: 4px solid var(--green);
+      padding-left: 20px;
+      color: white !important;
+      font-size: 1.3rem !important;
+      font-style: italic;
+    }
+
+    /* RESOURCES */
+
+    .resource-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 35px;
+      gap: 18px;
     }
 
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+    .resource-card {
+      min-height: 235px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
+    .resource-card h3 {
       font-size: 1.35rem;
     }
 
-    .story {
-      background: #10232c;
-      color: white;
+    .resource-card p {
+      margin-top: 8px;
     }
 
-    .story p {
-      color: #d8e2e5;
-    }
+    /* CTA */
 
-    .contact {
+    .big-cta {
       text-align: center;
+      padding: 100px 20px;
     }
 
-    .contact p {
-      margin: 0 auto 25px;
+    .big-cta h2 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      letter-spacing: -.06em;
+      line-height: .9;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .email {
-      color: #126e68;
-      font-weight: 800;
+    .big-cta h2 span {
+      color: var(--green);
     }
+
+    .big-cta p {
+      max-width: 650px;
+      margin: 25px auto 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .big-cta .buttons {
+      justify-content: center;
+    }
+
+    /* FOOTER */
 
     footer {
-      background: #091218;
-      color: #b7c4ca;
-      text-align: center;
-      padding: 35px 20px;
+      background: rgba(1,6,4,.96);
+      border-top: 1px solid var(--line);
+      padding: 55px 0 35px;
     }
 
-    footer strong {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr .7fr;
+      gap: 50px;
+    }
+
+    .footer-brand {
+      font-size: 1.5rem;
+      font-weight: 950;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand span {
+      color: var(--green);
+    }
+
+    footer p,
+    footer a {
+      color: #9fb0a5;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--green);
+    }
+
+    .footer-title {
       color: white;
+      font-weight: 900;
+      margin-bottom: 12px;
     }
 
-    @media (max-width: 760px) {
-      .nav-links {
-        display: none;
-      }
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
 
-      .cards {
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 40px;
+      padding-top: 25px;
+      color: #829087;
+      font-size: .85rem;
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .story-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: 72vh;
+      .hero-quote {
+        justify-self: start;
       }
 
-      section {
-        padding: 55px 0;
+      .mission-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .help-item + .help-item {
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,.1);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background: rgba(2,8,6,.98);
+        border-bottom: 1px solid var(--line);
+        padding: 12px 5%;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 15px 5px;
+      }
+
+      .nav-help {
+        text-align: center;
+        margin: 8px 0 10px;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      h1 {
+        font-size: clamp(3.6rem, 18vw, 5.7rem);
+      }
+
+      .hero-quote {
+        display: none;
+      }
+
+      .mission-grid,
+      .resource-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section.content-section {
+        padding: 70px 0;
+      }
+
+      .story-visual {
+        min-height: 350px;
+      }
+    }
+
+    /* ACCESSIBILITY */
+
+    :focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
@@ -240,183 +761,605 @@
 
 <header>
   <div class="container">
-    <nav>
-      <div class="brand">SURVIVING FENTANYL</div>
+    <nav aria-label="Main navigation">
 
-      <ul class="nav-links">
-        <li><a href="#mission">Mission</a></li>
+      <a href="#home" class="brand">
+        SURVIVING <span>FENTANYL</span>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#mission">About</a></li>
         <li><a href="#story">My Story</a></li>
         <li><a href="#resources">Resources</a></li>
+        <li><a href="#involved">Get Involved</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <a class="nav-help" href="#help">
+            Get Help Now
+          </a>
+        </li>
       </ul>
+
     </nav>
   </div>
 </header>
 
+
 <main>
 
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="eyebrow">Awareness • Recovery • Hope</div>
+  <!-- HERO -->
 
-      <h1>SURVIVING<br>FENTANYL</h1>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
 
-      <h2>Survival is possible. Recovery is possible. You are not alone.</h2>
+      <div>
+        <div class="eyebrow">
+          Awareness • Recovery • Hope
+        </div>
 
-      <p>
-        Turning lived experience into action through fentanyl education,
-        prevention, recovery support, community outreach, and connections
-        to resources that can save lives.
-      </p>
+        <h1>
+          Surviving
+          <span>Fentanyl</span>
+        </h1>
 
-      <div class="buttons">
-        <a class="button primary" href="#help">Get Help Now</a>
-        <a class="button secondary" href="#mission">Our Mission</a>
+        <div class="tagline">
+          Lived Experience. Real Recovery. A Way Forward.
+        </div>
+
+        <p class="hero-copy">
+          Turning lived experience into action through fentanyl
+          education, overdose prevention, recovery support,
+          community outreach and connections to resources that
+          can save lives.
+        </p>
+
+        <div class="buttons">
+          <a href="#help" class="button primary">
+            Get Help Now →
+          </a>
+
+          <a href="#mission" class="button secondary">
+            Our Mission
+          </a>
+        </div>
       </div>
+
+      <aside class="hero-quote">
+        <div class="quote">
+          “A better tomorrow is possible.”
+        </div>
+
+        <div class="accent-line"></div>
+      </aside>
+
     </div>
   </section>
 
-  <div class="container" id="help">
-    <div class="emergency">
-      <h2>Need help right now?</h2>
 
-      <p>
-        If you believe someone is experiencing an overdose, call
-        <strong>911 immediately</strong> and administer naloxone
-        if it is available.
-      </p>
+  <!-- IMMEDIATE HELP -->
 
-      <p style="margin-top:10px;">
-        For mental health, substance-use, or emotional crisis support in
-        the United States, call or text <strong>988</strong>.
-      </p>
+  <div class="help-strip" id="help">
+    <div class="container">
+
+      <div class="help-grid">
+
+        <div class="help-item emergency">
+          <div class="help-label">
+            In an Emergency
+          </div>
+
+          <a href="tel:911" class="help-number">
+            Call 911
+          </a>
+
+          <p>
+            If you believe someone is experiencing an overdose,
+            call 911 immediately and administer naloxone if available.
+          </p>
+        </div>
+
+
+        <div class="help-item">
+          <div class="help-label">
+            Suicide & Crisis Lifeline
+          </div>
+
+          <a href="tel:988" class="help-number">
+            Call or Text 988
+          </a>
+
+          <p>
+            Free, confidential crisis support for mental health,
+            emotional distress and alcohol or drug-use concerns.
+          </p>
+        </div>
+
+
+        <div class="help-item">
+          <div class="help-label">
+            Treatment & Referrals
+          </div>
+
+          <a href="tel:18006624357" class="help-number">
+            1-800-662-HELP
+          </a>
+
+          <p>
+            SAMHSA's free, confidential, 24/7 treatment referral
+            and information service.
+          </p>
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <section id="mission">
+
+  <!-- MISSION -->
+
+  <section class="content-section glass-section" id="mission">
     <div class="container">
-      <div class="eyebrow">Our Mission</div>
 
-      <h2>Experience can become a lifeline.</h2>
+      <div class="section-title reveal">
+        <div class="eyebrow">
+          Our Mission
+        </div>
 
-      <p>
-        Surviving Fentanyl is being built to help people and families
-        affected by fentanyl addiction through honest education,
-        peer-informed support, prevention, community outreach, and
-        connections to treatment and recovery resources.
-      </p>
+        <h2>
+          Experience can become a lifeline.
+        </h2>
 
-      <div class="cards">
-        <div class="card">
+        <p>
+          Surviving Fentanyl exists to turn lived experience into
+          education, support and action for people and families
+          affected by fentanyl.
+        </p>
+      </div>
+
+
+      <div class="mission-grid">
+
+        <article class="glass-card reveal">
+          <div class="card-icon">▣</div>
           <h3>Education</h3>
-          <p>
-            Clear information about fentanyl, overdose risk, naloxone,
-            prevention, and the realities of addiction.
-          </p>
-        </div>
 
-        <div class="card">
+          <p>
+            Straightforward information about fentanyl,
+            overdose risk, naloxone and prevention.
+          </p>
+
+          <a class="card-link" href="#resources">
+            Learn More →
+          </a>
+        </article>
+
+
+        <article class="glass-card reveal">
+          <div class="card-icon">↗</div>
           <h3>Recovery</h3>
-          <p>
-            Encouragement, practical guidance, and connections to
-            resources for people ready to begin or continue recovery.
-          </p>
-        </div>
 
-        <div class="card">
+          <p>
+            Encouragement, guidance and connections to resources
+            for every stage of recovery.
+          </p>
+
+          <a class="card-link"
+             href="https://findtreatment.gov/"
+             target="_blank"
+             rel="noopener">
+            Find Support →
+          </a>
+        </article>
+
+
+        <article class="glass-card reveal">
+          <div class="card-icon">♥</div>
+          <h3>Families</h3>
+
+          <p>
+            Information and resources for parents, loved ones
+            and people supporting someone affected by addiction.
+          </p>
+
+          <a class="card-link"
+             href="https://www.samhsa.gov/find-support/helping-someone"
+             target="_blank"
+             rel="noopener">
+            Get Resources →
+          </a>
+        </article>
+
+
+        <article class="glass-card reveal">
+          <div class="card-icon">◎</div>
           <h3>Community</h3>
+
           <p>
-            Outreach that brings people, families, organizations, and
-            resources together around one goal: saving lives.
+            Outreach and partnerships that bring people,
+            organizations and resources together.
           </p>
-        </div>
+
+          <a class="card-link" href="#involved">
+            Get Involved →
+          </a>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <section class="story" id="story">
-    <div class="container">
-      <div class="eyebrow">Why This Exists</div>
 
-      <h2>From surviving to helping others survive.</h2>
+  <!-- STORY -->
 
-      <p>
-        Surviving Fentanyl was created from lived experience with
-        fentanyl addiction and recovery. The goal is not to judge
-        people struggling with addiction. It is to reach them,
-        understand them, help them find resources, and show that
-        another life is possible.
-      </p>
+  <section class="content-section" id="story">
+    <div class="container story-grid">
 
-      <p style="margin-top:20px;">
-        The full story is coming soon.
-      </p>
-    </div>
-  </section>
+      <div class="story-visual reveal"
+           role="img"
+           aria-label="Seattle skyline">
+      </div>
 
-  <section class="light" id="resources">
-    <div class="container">
-      <div class="eyebrow">Resources</div>
+      <div class="story-copy reveal">
 
-      <h2>Knowledge can save a life.</h2>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Recognize an Overdose</h3>
-          <p>
-            Learn the warning signs of an opioid overdose and what
-            actions to take immediately.
-          </p>
+        <div class="eyebrow">
+          My Story
         </div>
 
-        <div class="card">
-          <h3>Naloxone</h3>
-          <p>
-            Learn what naloxone is, why it matters, and how it can
-            temporarily reverse an opioid overdose.
-          </p>
-        </div>
+        <h2>
+          From surviving to helping others survive.
+        </h2>
 
-        <div class="card">
-          <h3>Find Treatment</h3>
-          <p>
-            We are building a collection of reputable treatment,
-            recovery, harm-reduction, and community resources.
-          </p>
-        </div>
+        <p>
+          Surviving Fentanyl was created from lived experience
+          with addiction, loss and recovery.
+        </p>
+
+        <p>
+          The goal isn't to judge people struggling with addiction.
+          It's to reach them, understand them, connect them with
+          real resources and remind them that another life is possible.
+        </p>
+
+        <p>
+          This organization is being built around a simple idea:
+          experience that nearly destroyed a life can become experience
+          that helps save one.
+        </p>
+
+        <p class="story-quote">
+          “If my story can help even one person choose a different
+          tomorrow, it's worth telling.”
+        </p>
+
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="eyebrow">Get Involved</div>
 
-      <h2>Help us build something that saves lives.</h2>
+  <!-- RESOURCES -->
+
+  <section class="content-section glass-section" id="resources">
+    <div class="container">
+
+      <div class="section-title reveal">
+        <div class="eyebrow">
+          Featured Resources
+        </div>
+
+        <h2>
+          Real tools. Real help.
+        </h2>
+
+        <p>
+          Trusted starting points for overdose response,
+          treatment, recovery and support.
+        </p>
+      </div>
+
+
+      <div class="resource-grid">
+
+        <article class="glass-card resource-card reveal">
+          <div>
+            <div class="eyebrow">Overdose Response</div>
+            <h3>Naloxone (Narcan)</h3>
+
+            <p>
+              Learn how naloxone works, when to use it and
+              what to do during a suspected opioid overdose.
+            </p>
+
+            <a class="card-link"
+               href="https://www.cdc.gov/stop-overdose/caring/naloxone.html"
+               target="_blank"
+               rel="noopener">
+              Learn About Naloxone →
+            </a>
+          </div>
+        </article>
+
+
+        <article class="glass-card resource-card reveal">
+          <div>
+            <div class="eyebrow">Treatment</div>
+            <h3>Find Treatment</h3>
+
+            <p>
+              Search for mental health and substance-use
+              treatment providers across the United States.
+            </p>
+
+            <a class="card-link"
+               href="https://findtreatment.gov/"
+               target="_blank"
+               rel="noopener">
+              Search Treatment →
+            </a>
+          </div>
+        </article>
+
+
+        <article class="glass-card resource-card reveal">
+          <div>
+            <div class="eyebrow">24/7 Referral</div>
+            <h3>SAMHSA National Helpline</h3>
+
+            <p>
+              Free and confidential treatment referral and
+              information for individuals and families.
+            </p>
+
+            <a class="card-link"
+               href="tel:18006624357">
+              Call 1-800-662-HELP →
+            </a>
+          </div>
+        </article>
+
+
+        <article class="glass-card resource-card reveal">
+          <div>
+            <div class="eyebrow">Know the Signs</div>
+            <h3>Recognize an Overdose</h3>
+
+            <p>
+              Learn common signs of opioid overdose and
+              what you can do while emergency help is coming.
+            </p>
+
+            <a class="card-link"
+               href="https://www.cdc.gov/stop-overdose/response/index.html"
+               target="_blank"
+               rel="noopener">
+              Overdose Response →
+            </a>
+          </div>
+        </article>
+
+
+        <article class="glass-card resource-card reveal">
+          <div>
+            <div class="eyebrow">Crisis Support</div>
+            <h3>988 Lifeline</h3>
+
+            <p>
+              Call, text or chat for free, confidential
+              crisis support 24 hours a day.
+            </p>
+
+            <a class="card-link"
+               href="https://988lifeline.org/"
+               target="_blank"
+               rel="noopener">
+              Visit 988 Lifeline →
+            </a>
+          </div>
+        </article>
+
+
+        <article class="glass-card resource-card reveal">
+          <div>
+            <div class="eyebrow">Community</div>
+            <h3>Help Build the Mission</h3>
+
+            <p>
+              Volunteer, partner, share resources or help
+              Surviving Fentanyl reach more people.
+            </p>
+
+            <a class="card-link"
+               href="mailto:michael@survivingfentanyl.org">
+              Contact Us →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GET INVOLVED -->
+
+  <section class="big-cta" id="involved">
+    <div class="container reveal">
+
+      <div class="eyebrow">
+        Get Involved
+      </div>
+
+      <h2>
+        People Recover.<br>
+        <span>Communities Heal.</span>
+      </h2>
 
       <p>
-        Surviving Fentanyl is in its early stages. We welcome
-        conversations with community organizations, treatment and
-        recovery professionals, educators, volunteers, potential
-        partners, and people affected by the fentanyl crisis.
+        We're building Surviving Fentanyl from the ground up.
+        We welcome conversations with recovery professionals,
+        educators, community organizations, volunteers,
+        treatment providers and potential partners.
       </p>
 
-      <p>
-        <a class="email" href="mailto:michael@survivingfentanyl.org">
-          michael@survivingfentanyl.org
+      <div class="buttons">
+        <a href="mailto:michael@survivingfentanyl.org"
+           class="button primary">
+          Become a Partner →
         </a>
-      </p>
+
+        <a href="#resources"
+           class="button secondary">
+          Explore Resources
+        </a>
+      </div>
+
     </div>
   </section>
 
 </main>
 
-<footer>
-  <strong>Surviving Fentanyl</strong><br>
-  Education • Prevention • Recovery • Community
-  <br><br>
-  © 2026 Surviving Fentanyl. All rights reserved.
+
+<!-- FOOTER -->
+
+<footer id="contact">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          SURVIVING <span>FENTANYL</span>
+        </div>
+
+        <p>
+          Lived Experience. Real Recovery.<br>
+          A Way Forward.
+        </p>
+      </div>
+
+
+      <div>
+        <div class="footer-title">
+          Explore
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#mission">About</a></li>
+          <li><a href="#story">My Story</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#involved">Get Involved</a></li>
+        </ul>
+      </div>
+
+
+      <div>
+        <div class="footer-title">
+          Contact
+        </div>
+
+        <ul class="footer-links">
+          <li>
+            <a href="mailto:michael@survivingfentanyl.org">
+              michael@survivingfentanyl.org
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:988">
+              Crisis Support: 988
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:18006624357">
+              Treatment: 1-800-662-HELP
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Surviving Fentanyl. All rights reserved.
+      <br><br>
+      Surviving Fentanyl provides educational and resource
+      information and is not a substitute for emergency,
+      medical or professional treatment services.
+    </div>
+
+  </div>
 </footer>
+
+
+<script>
+
+  /* MOBILE NAV */
+
+  const menuButton = document.getElementById("menuButton");
+  const navLinks = document.getElementById("navLinks");
+
+  menuButton.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      open ? "true" : "false"
+    );
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+
+
+  /* SCROLL REVEALS */
+
+  const reducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!reducedMotion && "IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+  } else {
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      element.classList.add("visible");
+    });
+
+  }
+
+</script>
 
 </body>
 </html>
