@@ -1,1 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Surviving Fentanyl provides fentanyl education, prevention, recovery support, resources, and community outreach.">
+  <title>Surviving Fentanyl | Recovery Is Possible</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      color: #18222d;
+      background: #ffffff;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: #0d1720;
+      color: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(8,18,27,.96), rgba(19,70,82,.90));
+      color: white;
+      text-align: center;
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .8rem;
+      font-weight: 800;
+      color: #7ee2d1;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: .95;
+      margin-bottom: 24px;
+      letter-spacing: -.04em;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.35rem, 4vw, 2rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      max-width: 700px;
+      margin: 0 auto 32px;
+      color: #dbe7ea;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .primary {
+      background: #39c6ad;
+      color: #071a19;
+    }
+
+    .secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .emergency {
+      background: #fff3f2;
+      border-left: 6px solid #b52b27;
+      padding: 24px;
+      margin: 40px auto;
+      border-radius: 8px;
+    }
+
+    .emergency h2 {
+      color: #8c1e1a;
+      margin-bottom: 8px;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    section h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 18px;
+    }
+
+    section p {
+      max-width: 760px;
+      font-size: 1.08rem;
+    }
+
+    .light {
+      background: #f3f7f7;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+    }
+
+    .story {
+      background: #10232c;
+      color: white;
+    }
+
+    .story p {
+      color: #d8e2e5;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 0 auto 25px;
+    }
+
+    .email {
+      color: #126e68;
+      font-weight: 800;
+    }
+
+    footer {
+      background: #091218;
+      color: #b7c4ca;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 72vh;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">SURVIVING FENTANYL</div>
+
+      <ul class="nav-links">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#story">My Story</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Awareness • Recovery • Hope</div>
+
+      <h1>SURVIVING<br>FENTANYL</h1>
+
+      <h2>Survival is possible. Recovery is possible. You are not alone.</h2>
+
+      <p>
+        Turning lived experience into action through fentanyl education,
+        prevention, recovery support, community outreach, and connections
+        to resources that can save lives.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="#help">Get Help Now</a>
+        <a class="button secondary" href="#mission">Our Mission</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" id="help">
+    <div class="emergency">
+      <h2>Need help right now?</h2>
+
+      <p>
+        If you believe someone is experiencing an overdose, call
+        <strong>911 immediately</strong> and administer naloxone
+        if it is available.
+      </p>
+
+      <p style="margin-top:10px;">
+        For mental health, substance-use, or emotional crisis support in
+        the United States, call or text <strong>988</strong>.
+      </p>
+    </div>
+  </div>
+
+  <section id="mission">
+    <div class="container">
+      <div class="eyebrow">Our Mission</div>
+
+      <h2>Experience can become a lifeline.</h2>
+
+      <p>
+        Surviving Fentanyl is being built to help people and families
+        affected by fentanyl addiction through honest education,
+        peer-informed support, prevention, community outreach, and
+        connections to treatment and recovery resources.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Education</h3>
+          <p>
+            Clear information about fentanyl, overdose risk, naloxone,
+            prevention, and the realities of addiction.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Recovery</h3>
+          <p>
+            Encouragement, practical guidance, and connections to
+            resources for people ready to begin or continue recovery.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Community</h3>
+          <p>
+            Outreach that brings people, families, organizations, and
+            resources together around one goal: saving lives.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="container">
+      <div class="eyebrow">Why This Exists</div>
+
+      <h2>From surviving to helping others survive.</h2>
+
+      <p>
+        Surviving Fentanyl was created from lived experience with
+        fentanyl addiction and recovery. The goal is not to judge
+        people struggling with addiction. It is to reach them,
+        understand them, help them find resources, and show that
+        another life is possible.
+      </p>
+
+      <p style="margin-top:20px;">
+        The full story is coming soon.
+      </p>
+    </div>
+  </section>
+
+  <section class="light" id="resources">
+    <div class="container">
+      <div class="eyebrow">Resources</div>
+
+      <h2>Knowledge can save a life.</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Recognize an Overdose</h3>
+          <p>
+            Learn the warning signs of an opioid overdose and what
+            actions to take immediately.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Naloxone</h3>
+          <p>
+            Learn what naloxone is, why it matters, and how it can
+            temporarily reverse an opioid overdose.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Find Treatment</h3>
+          <p>
+            We are building a collection of reputable treatment,
+            recovery, harm-reduction, and community resources.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="eyebrow">Get Involved</div>
+
+      <h2>Help us build something that saves lives.</h2>
+
+      <p>
+        Surviving Fentanyl is in its early stages. We welcome
+        conversations with community organizations, treatment and
+        recovery professionals, educators, volunteers, potential
+        partners, and people affected by the fentanyl crisis.
+      </p>
+
+      <p>
+        <a class="email" href="mailto:michael@survivingfentanyl.org">
+          michael@survivingfentanyl.org
+        </a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Surviving Fentanyl</strong><br>
+  Education • Prevention • Recovery • Community
+  <br><br>
+  © 2026 Surviving Fentanyl. All rights reserved.
+</footer>
+
+</body>
+</html>
