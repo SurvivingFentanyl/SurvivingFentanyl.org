@@ -53,10 +53,7 @@
       overflow-x: hidden;
     }
 
-    /* =========================================================
-       FIXED SEATTLE BACKGROUND
-       Adjusted to keep the Space Needle visible below navigation
-       ========================================================= */
+    /* FIXED SEATTLE BACKGROUND */
 
     body::before {
       content: "";
@@ -75,11 +72,6 @@
 
       background-size: cover;
       background-repeat: no-repeat;
-
-      /*
-        Moving the image down slightly keeps the top of
-        the Space Needle from disappearing behind the navbar.
-      */
       background-position: center 10%;
 
       transform: scale(1.015);
@@ -148,10 +140,8 @@
       top: 0;
       left: 0;
       z-index: 9999;
-
       height: 3px;
       width: 0;
-
       background: var(--green);
 
       box-shadow:
@@ -202,10 +192,8 @@
       width: 43px;
       height: 43px;
       flex: 0 0 43px;
-
       display: grid;
       place-items: center;
-
       position: relative;
 
       border: 1px solid rgba(101,255,112,.55);
@@ -524,6 +512,18 @@
       font-size: .88rem;
     }
 
+    .help-center-link {
+      display: inline-block;
+      margin-top: 12px;
+
+      color: var(--green);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
     /* GENERAL SECTIONS */
 
     section.content-section {
@@ -561,7 +561,7 @@
       font-size: 1.05rem;
     }
 
-    /* MISSION */
+    /* MISSION CARDS */
 
     .mission-grid {
       display: grid;
@@ -726,7 +726,9 @@
 
     .resource-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 18px;
     }
 
@@ -781,7 +783,7 @@
       margin-top: 8px;
     }
 
-    /* CTA */
+    /* BIG CTA */
 
     .big-cta {
       text-align: center;
@@ -869,6 +871,7 @@
 
     .footer-links {
       list-style: none;
+
       display: grid;
       gap: 8px;
     }
@@ -900,7 +903,7 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVE */
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
@@ -1125,7 +1128,7 @@
         </li>
 
         <li>
-          <a href="#resources">
+          <a href="resources.html">
             Resources
           </a>
         </li>
@@ -1144,7 +1147,7 @@
 
         <li>
           <a class="nav-help"
-             href="#help">
+             href="resources.html">
 
             Get Help Now
           </a>
@@ -1192,7 +1195,7 @@
 
         <div class="buttons">
 
-          <a href="#help"
+          <a href="resources.html"
              class="button primary">
 
             Get Help Now →
@@ -1251,6 +1254,11 @@
             administer naloxone if available.
           </p>
 
+          <a class="help-center-link"
+             href="resources.html#emergency">
+            Overdose Instructions →
+          </a>
+
         </div>
 
 
@@ -1272,6 +1280,11 @@
             alcohol or drug-use concerns.
           </p>
 
+          <a class="help-center-link"
+             href="resources.html">
+            More Help →
+          </a>
+
         </div>
 
 
@@ -1291,6 +1304,11 @@
             SAMHSA's free, confidential, 24/7
             treatment referral and information service.
           </p>
+
+          <a class="help-center-link"
+             href="resources.html#treatment">
+            Treatment Resources →
+          </a>
 
         </div>
 
@@ -1344,7 +1362,7 @@
           </p>
 
           <a class="card-link"
-             href="#resources">
+             href="resources.html#naloxone">
 
             Learn More →
           </a>
@@ -1368,9 +1386,7 @@
           </p>
 
           <a class="card-link"
-             href="https://findtreatment.gov/"
-             target="_blank"
-             rel="noopener">
+             href="resources.html#treatment">
 
             Find Support →
           </a>
@@ -1395,9 +1411,7 @@
           </p>
 
           <a class="card-link"
-             href="https://www.samhsa.gov/find-support/helping-someone"
-             target="_blank"
-             rel="noopener">
+             href="resources.html">
 
             Get Resources →
           </a>
@@ -1512,18 +1526,26 @@
         </h2>
 
         <p>
-          Trusted starting points for overdose
-          response, treatment, recovery and support.
+          Start with the Surviving Fentanyl Help Center
+          for overdose response, naloxone information,
+          treatment, recovery and family support.
         </p>
+
+        <div class="buttons">
+
+          <a href="resources.html"
+             class="button primary">
+            Open Help Center →
+          </a>
+
+        </div>
 
       </div>
 
 
       <div class="resource-grid">
 
-        <article
-          class="glass-card resource-card reveal">
-
+        <article class="glass-card resource-card reveal">
           <div>
 
             <div class="eyebrow">
@@ -1540,23 +1562,17 @@
               opioid overdose.
             </p>
 
-            <a
-              class="card-link"
-              href="https://www.cdc.gov/stop-overdose/caring/naloxone.html"
-              target="_blank"
-              rel="noopener">
+            <a class="card-link"
+               href="resources.html#naloxone">
 
-              Learn About Naloxone →
+              Naloxone Help →
             </a>
 
           </div>
-
         </article>
 
 
-        <article
-          class="glass-card resource-card reveal">
-
+        <article class="glass-card resource-card reveal">
           <div>
 
             <div class="eyebrow">
@@ -1568,125 +1584,103 @@
             </h3>
 
             <p>
-              Search for mental health and
-              substance-use treatment providers
-              across the United States.
+              Start with treatment and recovery
+              resources, including national and
+              Washington-specific options.
             </p>
 
-            <a
-              class="card-link"
-              href="https://findtreatment.gov/"
-              target="_blank"
-              rel="noopener">
+            <a class="card-link"
+               href="resources.html#treatment">
 
-              Search Treatment →
+              Treatment Resources →
             </a>
 
           </div>
-
         </article>
 
 
-        <article
-          class="glass-card resource-card reveal">
-
+        <article class="glass-card resource-card reveal">
           <div>
 
             <div class="eyebrow">
-              24/7 Referral
+              Immediate Help
             </div>
 
             <h3>
-              SAMHSA National Helpline
+              Overdose Emergency
             </h3>
 
             <p>
-              Free and confidential treatment
-              referral and information for
-              individuals and families.
+              Know what to do when you suspect an
+              opioid overdose and get emergency
+              instructions quickly.
             </p>
 
-            <a
-              class="card-link"
-              href="tel:18006624357">
+            <a class="card-link"
+               href="resources.html#emergency">
 
-              Call 1-800-662-HELP →
+              Emergency Steps →
             </a>
 
           </div>
-
         </article>
 
 
-        <article
-          class="glass-card resource-card reveal">
-
+        <article class="glass-card resource-card reveal">
           <div>
 
             <div class="eyebrow">
-              Know the Signs
+              Families
             </div>
 
             <h3>
-              Recognize an Overdose
+              Help Someone You Love
             </h3>
 
             <p>
-              Learn common signs of opioid overdose
-              and what you can do while emergency
-              help is coming.
+              Resources for families, friends and
+              loved ones trying to support someone
+              affected by substance use.
             </p>
 
-            <a
-              class="card-link"
-              href="https://www.cdc.gov/stop-overdose/response/index.html"
-              target="_blank"
-              rel="noopener">
+            <a class="card-link"
+               href="resources.html">
 
-              Overdose Response →
+              Family Resources →
             </a>
 
           </div>
-
         </article>
 
 
-        <article
-          class="glass-card resource-card reveal">
-
+        <article class="glass-card resource-card reveal">
           <div>
 
             <div class="eyebrow">
-              Crisis Support
+              Washington
             </div>
 
             <h3>
-              988 Lifeline
+              Local Resources
             </h3>
 
             <p>
-              Call, text or chat for free,
-              confidential crisis support
-              24 hours a day.
+              Washington and King County resources
+              for naloxone, treatment, recovery and
+              overdose prevention.
             </p>
 
-            <a
-              class="card-link"
-              href="https://988lifeline.org/"
-              target="_blank"
-              rel="noopener">
+            <a class="card-link"
+               href="resources.html#washington">
 
-              Visit 988 Lifeline →
+              Washington Help →
             </a>
 
           </div>
-
         </article>
 
 
-        <article
-          class="glass-card resource-card reveal">
-
+        <article class="glass-card resource-card reveal">
           <div>
 
             <div class="eyebrow">
@@ -1703,15 +1697,13 @@
               more people.
             </p>
 
-            <a
-              class="card-link"
-              href="mailto:michael@survivingfentanyl.org">
+            <a class="card-link"
+               href="mailto:michael@survivingfentanyl.org">
 
               Contact Us →
             </a>
 
           </div>
-
         </article>
 
       </div>
@@ -1758,10 +1750,10 @@
         </a>
 
         <a
-          href="#resources"
+          href="resources.html"
           class="button secondary">
 
-          Explore Resources
+          Explore Help Center
         </a>
 
       </div>
@@ -1817,8 +1809,8 @@
           </li>
 
           <li>
-            <a href="#resources">
-              Resources
+            <a href="resources.html">
+              Help Center
             </a>
           </li>
 
