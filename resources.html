@@ -1,1927 +1,580 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Fentanyl Help & Resources | Surviving Fentanyl</title>
-
-<meta name="description"
-content="Fentanyl overdose response, naloxone information, treatment resources, recovery support and Washington resources from Surviving Fentanyl.">
-
-<meta name="theme-color" content="#050a08">
-
-<link rel="canonical"
-href="https://survivingfentanyl.org/resources.html">
-
-<style>
-
-:root {
-  --green:#65ff70;
-  --green2:#25d94c;
-  --white:#f7fff8;
-  --muted:#b9c8bf;
-  --black:#030706;
-  --panel:rgba(4,15,12,.78);
-  --line:rgba(101,255,112,.20);
-  --red:#ff6868;
-}
-
-* {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:95px;
-}
-
-body {
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
-  color:var(--white);
-  background:var(--black);
-  line-height:1.6;
-  overflow-x:hidden;
-}
-
-/* SEATTLE BACKGROUND */
-
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-3;
-
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(0,8,5,.38),
-      rgba(0,8,5,.76) 45%,
-      rgba(0,5,3,.96)
-    ),
-    url("seattle-bg.jpg");
-
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center 10%;
-}
-
-/* GREEN ATMOSPHERE */
-
-body::after {
-  content:"";
-  position:fixed;
-  inset:-20%;
-  z-index:-2;
-  pointer-events:none;
-
-  background:
-    radial-gradient(
-      circle at 20% 25%,
-      rgba(101,255,112,.14),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 80% 60%,
-      rgba(37,217,76,.09),
-      transparent 28%
-    );
-
-  animation:atmosphere 16s ease-in-out infinite alternate;
-}
-
-@keyframes atmosphere {
-  from {
-    transform:translate(-2%,-1%);
-  }
-
-  to {
-    transform:translate(2%,1%);
-  }
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources & Help Center | Surviving Fentanyl</title>
+    <meta
+      name="description"
+      content="Find overdose response steps, naloxone information, treatment referrals, family support, and Washington resources."
+    />
+    <meta name="theme-color" content="#071610" />
+    <link rel="canonical" href="https://survivingfentanyl.org/resources.html" />
+    <meta
+      property="og:title"
+      content="Resources & Help Center | Surviving Fentanyl"
+    />
+    <meta
+      property="og:description"
+      content="Find overdose response steps, naloxone information, treatment referrals, family support, and Washington resources."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://survivingfentanyl.org/resources.html"
+    />
+    <meta
+      property="og:image"
+      content="https://survivingfentanyl.org/seattle-bg.jpg"
+    />
+    <link rel="stylesheet" href="site.css" />
+    <script src="site.js" defer></script>
+  </head>
+  <body class="resources-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="skyline" aria-hidden="true"></div>
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <div class="urgent-bar">
+      <div class="container">
+        <span
+          >Suspected overdose? <a href="tel:911">Call 911</a> and give naloxone
+          if available.</span
+        ><a href="resources.html#emergency"
+          >Emergency steps <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </div>
+    <header>
+      <nav class="container" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="Surviving Fentanyl home"
+          ><span class="mark" aria-hidden="true">SF<span>↗</span></span
+          ><span class="brand-copy">SURVIVING<strong>FENTANYL</strong></span></a
+        >
+        <button
+          class="menu-button"
+          id="menuButton"
+          aria-controls="navLinks"
+          aria-expanded="false"
+          hidden
+        >
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#programs">Programs</a></li>
+          <li><a href="resources.html" aria-current="page">Resources</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#involved">Get involved</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li>
+            <a class="nav-help" href="resources.html#emergency"
+              >Get help <span aria-hidden="true">↗</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <!-- HERO -->
+
+      <section class="hero resource-hero">
+        <div class="container reveal">
+          <div class="eyebrow">Surviving Fentanyl Help Center</div>
+
+          <h1>
+            Real Help.
+            <span>Right Now.</span>
+          </h1>
+
+          <p>
+            Whether you're worried about an overdose, looking for naloxone,
+            searching for treatment, supporting someone you love or trying to
+            begin recovery yourself, start here.
+          </p>
+
+          <div class="buttons">
+            <a class="button primary" href="#emergency"> Overdose Emergency </a>
+
+            <a class="button secondary" href="#treatment"> Find Treatment </a>
+            <a class="button secondary" href="#naloxone">Naloxone</a
+            ><a class="button secondary" href="#families">Family support</a
+            ><a class="button secondary" href="#washington">Washington</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMERGENCY -->
 
-a {
-  color:inherit;
-}
-
-.container {
-  width:min(1160px,91%);
-  margin:auto;
-}
-
-/* TOP PROGRESS */
-
-#progress {
-  position:fixed;
-  top:0;
-  left:0;
-  height:3px;
-  width:0;
-  z-index:9999;
-  background:var(--green);
-
-  box-shadow:
-    0 0 8px var(--green),
-    0 0 20px var(--green);
-}
-
-/* NAV */
-
-header {
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
-
-  background:rgba(2,8,6,.82);
-
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-
-  border-bottom:1px solid rgba(101,255,112,.12);
-}
-
-nav {
-  min-height:78px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:25px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:11px;
-
-  text-decoration:none;
-}
-
-.mark {
-  width:43px;
-  height:43px;
-
-  display:grid;
-  place-items:center;
-
-  position:relative;
-
-  border:1px solid rgba(101,255,112,.55);
-  border-radius:50%;
-
-  color:var(--green);
-
-  font-size:.78rem;
-  font-weight:1000;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(101,255,112,.13),
-      rgba(0,0,0,.4)
-    );
-}
-
-.mark::after {
-  content:"";
-
-  position:absolute;
-  inset:-1px;
-
-  border:1px solid var(--green);
-  border-radius:50%;
-
-  animation:pulse 3s ease-out infinite;
-}
-
-@keyframes pulse {
-
-  0% {
-    transform:scale(.92);
-    opacity:.6;
-  }
-
-  75%,
-  100% {
-    transform:scale(1.45);
-    opacity:0;
-  }
-}
-
-.brand-copy {
-  display:flex;
-  flex-direction:column;
-}
-
-.brand-name {
-  font-weight:950;
-  line-height:1;
-}
-
-.brand-name strong {
-  color:var(--green);
-}
-
-.brand-tag {
-  color:#7f9588;
-  font-size:.48rem;
-  letter-spacing:.14em;
-  margin-top:6px;
-}
-
-.nav-links {
-  list-style:none;
-
-  display:flex;
-  align-items:center;
-
-  gap:24px;
-}
-
-.nav-links a {
-  text-decoration:none;
-  font-size:.91rem;
-  font-weight:750;
-}
-
-.nav-links a:hover {
-  color:var(--green);
-}
-
-.help-nav {
-  background:var(--green);
-  color:#031006 !important;
-
-  padding:11px 18px;
-
-  border-radius:999px;
-
-  font-weight:900 !important;
-}
-
-/* HERO */
-
-.hero {
-  padding:165px 0 80px;
-  min-height:610px;
-
-  display:flex;
-  align-items:center;
-}
-
-.eyebrow {
-  color:var(--green);
-
-  text-transform:uppercase;
-
-  letter-spacing:.18em;
-
-  font-size:.75rem;
-  font-weight:950;
-
-  margin-bottom:17px;
-}
-
-h1 {
-  max-width:900px;
-
-  font-size:clamp(3.7rem,8vw,7rem);
-
-  line-height:.87;
-  letter-spacing:-.06em;
-
-  text-transform:uppercase;
-
-  font-weight:1000;
-
-  text-shadow:
-    0 10px 40px rgba(0,0,0,.75);
-}
-
-h1 span {
-  color:var(--green);
-
-  display:block;
-
-  text-shadow:
-    0 0 35px rgba(101,255,112,.20);
-}
-
-.hero p {
-  max-width:720px;
-
-  margin-top:25px;
-
-  color:#d9e5dc;
-
-  font-size:1.12rem;
-}
-
-/* EMERGENCY */
-
-.emergency {
-  margin-bottom:65px;
-}
-
-.emergency-box {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(43,8,8,.91),
-      rgba(10,8,7,.91)
-    );
-
-  border:1px solid rgba(255,104,104,.45);
-
-  border-radius:22px;
-
-  padding:34px;
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.5);
-}
-
-.emergency-top {
-  color:var(--red);
-
-  font-weight:950;
-
-  text-transform:uppercase;
-
-  letter-spacing:.12em;
-
-  font-size:.78rem;
-}
-
-.emergency-box h2 {
-  font-size:clamp(2rem,5vw,3.8rem);
-
-  line-height:1;
-
-  margin:12px 0 18px;
-}
-
-.steps {
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:14px;
-
-  margin-top:28px;
-}
-
-.step {
-  background:rgba(0,0,0,.30);
-
-  border:1px solid rgba(255,255,255,.10);
-
-  border-radius:15px;
-
-  padding:20px;
-}
-
-.step-number {
-  color:var(--red);
-
-  font-size:1.6rem;
-
-  font-weight:1000;
-}
-
-.step strong {
-  display:block;
-
-  margin:6px 0;
-}
-
-/* BUTTONS */
-
-.buttons {
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:12px;
-
-  margin-top:25px;
-}
-
-.button {
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:13px 21px;
-
-  border-radius:999px;
-
-  text-decoration:none;
-
-  font-weight:900;
-
-  transition:.2s ease;
-}
-
-.button:hover {
-  transform:translateY(-2px);
-}
-
-.primary {
-  background:var(--green);
-  color:#031006;
-
-  box-shadow:
-    0 0 30px rgba(101,255,112,.20);
-}
-
-.secondary {
-  border:1px solid rgba(255,255,255,.45);
-
-  background:rgba(0,0,0,.25);
-}
-
-.emergency-button {
-  background:var(--red);
-  color:#160303;
-}
-
-/* SECTIONS */
-
-.section {
-  padding:85px 0;
-}
-
-.section-dark {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(2,10,7,.73),
-      rgba(2,8,6,.89)
-    );
-
-  backdrop-filter:blur(8px);
-
-  border-top:
-    1px solid rgba(101,255,112,.08);
-
-  border-bottom:
-    1px solid rgba(101,255,112,.08);
-}
-
-.section-heading {
-  max-width:790px;
-
-  margin-bottom:38px;
-}
-
-.section-heading h2 {
-  font-size:clamp(2.4rem,5vw,4.2rem);
-
-  line-height:.97;
-
-  letter-spacing:-.045em;
-}
-
-.section-heading p {
-  color:var(--muted);
-
-  margin-top:15px;
-
-  font-size:1.05rem;
-}
-
-/* CARDS */
-
-.grid {
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:18px;
-}
-
-.card {
-  background:var(--panel);
-
-  backdrop-filter:blur(15px);
-
-  border:1px solid var(--line);
-
-  border-radius:19px;
-
-  padding:27px;
-
-  min-height:245px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
-}
-
-.card:hover {
-  transform:translateY(-6px);
-
-  border-color:
-    rgba(101,255,112,.55);
-
-  box-shadow:
-    0 20px 55px rgba(0,0,0,.45),
-    0 0 30px rgba(101,255,112,.08);
-}
-
-.card-label {
-  color:var(--green);
-
-  text-transform:uppercase;
-
-  letter-spacing:.12em;
-
-  font-size:.7rem;
-
-  font-weight:950;
-}
-
-.card h3 {
-  margin:10px 0;
-
-  font-size:1.45rem;
-}
-
-.card p {
-  color:var(--muted);
-
-  flex:1;
-}
-
-.card-link {
-  color:var(--green);
-
-  text-decoration:none;
-
-  font-size:.82rem;
-
-  font-weight:950;
-
-  text-transform:uppercase;
-
-  letter-spacing:.05em;
-
-  margin-top:22px;
-}
-
-/* QUICK HELP */
-
-.quick-grid {
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:18px;
-}
-
-.quick {
-  padding:30px;
-
-  background:
-    rgba(4,15,12,.78);
-
-  border:
-    1px solid var(--line);
-
-  border-radius:20px;
-}
-
-.quick h3 {
-  font-size:1.6rem;
-
-  margin-bottom:10px;
-}
-
-.quick p {
-  color:var(--muted);
-}
-
-/* WASHINGTON */
-
-.wa-box {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(7,30,18,.88),
-      rgba(2,12,8,.92)
-    );
-
-  border:
-    1px solid rgba(101,255,112,.35);
-
-  border-radius:24px;
-
-  padding:38px;
-}
-
-.wa-box h2 {
-  font-size:
-    clamp(2.3rem,5vw,4rem);
-
-  line-height:1;
-
-  letter-spacing:-.04em;
-}
-
-.wa-box > p {
-  color:var(--muted);
-
-  max-width:760px;
-
-  margin-top:16px;
-}
-
-.local-grid {
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:15px;
-
-  margin-top:30px;
-}
-
-.local-item {
-  padding:21px;
-
-  background:
-    rgba(0,0,0,.26);
-
-  border:
-    1px solid rgba(255,255,255,.10);
-
-  border-radius:15px;
-}
-
-.local-item strong {
-  display:block;
-
-  color:var(--green);
-
-  margin-bottom:7px;
-}
-
-.local-item a {
-  text-decoration:none;
-}
-
-.local-item a:hover {
-  color:var(--green);
-}
-
-/* CTA */
-
-.cta {
-  padding:100px 0;
-
-  text-align:center;
-}
-
-.cta h2 {
-  font-size:
-    clamp(2.8rem,7vw,5.5rem);
-
-  line-height:.92;
-
-  letter-spacing:-.055em;
-}
-
-.cta h2 span {
-  color:var(--green);
-}
-
-.cta p {
-  max-width:650px;
-
-  margin:22px auto 0;
-
-  color:var(--muted);
-}
-
-.cta .buttons {
-  justify-content:center;
-}
-
-/* FOOTER */
-
-footer {
-  background:
-    rgba(1,6,4,.97);
-
-  border-top:
-    1px solid var(--line);
-
-  padding:50px 0 35px;
-}
-
-.footer-grid {
-  display:grid;
-
-  grid-template-columns:
-    1.3fr .7fr .7fr;
-
-  gap:40px;
-}
-
-.footer-title {
-  font-weight:900;
-
-  margin-bottom:10px;
-}
-
-footer p,
-footer a {
-  color:#9dac9f;
-}
-
-footer a {
-  text-decoration:none;
-}
-
-footer a:hover {
-  color:var(--green);
-}
-
-.footer-links {
-  list-style:none;
-
-  display:grid;
-
-  gap:7px;
-}
-
-.copyright {
-  border-top:
-    1px solid rgba(255,255,255,.08);
-
-  margin-top:35px;
-
-  padding-top:23px;
-
-  color:#7f8c83;
-
-  font-size:.84rem;
-}
-
-/* FLOATING HELP */
-
-.floating-help {
-  display:none;
-
-  position:fixed;
-
-  left:18px;
-  right:18px;
-  bottom:18px;
-
-  z-index:950;
-
-  background:var(--green);
-
-  color:#031006;
-
-  text-align:center;
-
-  text-decoration:none;
-
-  font-weight:1000;
-
-  padding:14px;
-
-  border-radius:999px;
-
-  box-shadow:
-    0 10px 40px rgba(0,0,0,.5),
-    0 0 30px rgba(101,255,112,.25);
-}
-
-/* REVEAL */
-
-.reveal {
-  opacity:0;
-
-  transform:translateY(22px);
-
-  transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.reveal.visible {
-  opacity:1;
-
-  transform:none;
-}
-
-/* MOBILE */
-
-@media(max-width:900px) {
-
-  .grid,
-  .local-grid {
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .steps {
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .footer-grid {
-    grid-template-columns:
-      1fr 1fr;
-  }
-}
-
-@media(max-width:700px) {
-
-  .brand-tag {
-    display:none;
-  }
-
-  .nav-links li:not(:last-child) {
-    display:none;
-  }
-
-  .grid,
-  .local-grid,
-  .quick-grid,
-  .steps,
-  .footer-grid {
-    grid-template-columns:1fr;
-  }
-
-  .hero {
-    padding-top:140px;
-
-    min-height:570px;
-  }
-
-  h1 {
-    font-size:
-      clamp(3.3rem,17vw,5.4rem);
-  }
-
-  .floating-help {
-    display:block;
-  }
-
-  footer {
-    padding-bottom:100px;
-  }
-
-  body::before {
-    background-position:center 5%;
-  }
-}
-
-:focus-visible {
-  outline:3px solid var(--green);
-
-  outline-offset:4px;
-}
-
-@media(prefers-reduced-motion:reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation:none !important;
-
-    transition:none !important;
-
-    scroll-behavior:auto !important;
-  }
-
-  .reveal {
-    opacity:1;
-
-    transform:none;
-  }
-}
-
-</style>
-</head>
-
-
-<body>
-
-<div id="progress"
-     aria-hidden="true"></div>
-
-
-<header>
-
-<div class="container">
-
-<nav>
-
-<a class="brand"
-   href="index.html">
-
-<span class="mark">
-SF
-</span>
-
-<span class="brand-copy">
-
-<span class="brand-name">
-SURVIVING
-<strong>FENTANYL</strong>
-</span>
-
-<span class="brand-tag">
-LIVED EXPERIENCE. REAL RECOVERY.
-</span>
-
-</span>
-
-</a>
-
-
-<ul class="nav-links">
-
-<li>
-<a href="index.html">
-Home
-</a>
-</li>
-
-<li>
-<a href="#naloxone">
-Naloxone
-</a>
-</li>
-
-<li>
-<a href="#treatment">
-Treatment
-</a>
-</li>
-
-<li>
-<a href="#washington">
-Washington
-</a>
-</li>
-
-<li>
-<a class="help-nav"
-   href="#emergency">
-Get Help Now
-</a>
-</li>
-
-</ul>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<main>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="container reveal">
-
-<div class="eyebrow">
-Surviving Fentanyl Help Center
-</div>
-
-<h1>
-Real Help.
-<span>Right Now.</span>
-</h1>
-
-<p>
-Whether you're worried about an overdose,
-looking for naloxone, searching for treatment,
-supporting someone you love or trying to begin
-recovery yourself, start here.
-</p>
-
-<div class="buttons">
-
-<a class="button primary"
-   href="#emergency">
-Overdose Emergency
-</a>
-
-<a class="button secondary"
-   href="#treatment">
-Find Treatment
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- EMERGENCY -->
-
-<section class="emergency"
-         id="emergency">
-
-<div class="container">
-
-<div class="emergency-box reveal">
-
-<div class="emergency-top">
-Suspected Opioid Overdose
-</div>
-
-<h2>
-Treat it like an emergency.
-</h2>
-
-<p>
-If someone cannot be awakened or is not
-breathing normally, call 911. Give naloxone
-if you have it and follow the 911 operator's
-instructions.
-</p>
-
-
-<div class="steps">
-
-<div class="step">
-
-<div class="step-number">
-01
-</div>
-
-<strong>
-Call 911
-</strong>
-
-<p>
-Get emergency medical help immediately.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="step-number">
-02
-</div>
-
-<strong>
-Give Naloxone
-</strong>
-
-<p>
-Use naloxone if available. More than one
-dose may be needed.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="step-number">
-03
-</div>
-
-<strong>
-Support Breathing
-</strong>
-
-<p>
-Follow the 911 operator's instructions and
-provide rescue breathing if instructed and
-able.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="step-number">
-04
-</div>
-
-<strong>
-Stay With Them
-</strong>
-
-<p>
-Keep watching their breathing and stay until
-emergency help arrives.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="buttons">
-
-<a href="tel:911"
-   class="button emergency-button">
-
-Call 911
-</a>
-
-<a
-href="https://www.cdc.gov/stop-overdose/response/index.html"
-target="_blank"
-rel="noopener"
-class="button secondary">
-
-CDC Overdose Instructions
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- NALOXONE -->
-
-<section class="section section-dark"
-         id="naloxone">
-
-<div class="container">
-
-<div class="section-heading reveal">
-
-<div class="eyebrow">
-Naloxone / Narcan
-</div>
-
-<h2>
-Carry something that can save a life.
-</h2>
-
-<p>
-Naloxone is an opioid-overdose reversal
-medication. It can reverse overdoses caused
-by opioids including fentanyl.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-<div class="card reveal">
-
-<div class="card-label">
-Learn
-</div>
-
-<h3>
-What is naloxone?
-</h3>
-
-<p>
-Learn how naloxone works, the forms it comes
-in and why people who use opioids — and the
-people around them — should consider carrying it.
-</p>
-
-<a
-class="card-link"
-href="https://www.cdc.gov/stop-overdose/caring/naloxone.html"
-target="_blank"
-rel="noopener">
-
-CDC Naloxone Guide →
-</a>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="card-label">
-Washington
-</div>
-
-<h3>
-Get naloxone
-</h3>
-
-<p>
-Washington residents have multiple options
-for obtaining naloxone, including pharmacies
-and community programs.
-</p>
-
-<a
-class="card-link"
-href="https://doh.wa.gov/you-and-your-family/drug-user-health/overdose-education-naloxone-distribution"
-target="_blank"
-rel="noopener">
-
-Washington Naloxone →
-</a>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="card-label">
-Instructions
-</div>
-
-<h3>
-Know how to use it
-</h3>
-
-<p>
-Read Washington State's instructions for
-recognizing an overdose, calling 911,
-administering naloxone and providing
-post-overdose care.
-</p>
-
-<a
-class="card-link"
-href="https://doh.wa.gov/you-and-your-family/drug-user-health/overdose-education-naloxone-distribution/naloxone-instructions"
-target="_blank"
-rel="noopener">
-
-Naloxone Instructions →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WHAT DO I NEED -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-heading reveal">
-
-<div class="eyebrow">
-Where Do I Start?
-</div>
-
-<h2>
-Tell us what you need.
-</h2>
-
-</div>
-
-
-<div class="quick-grid">
-
-<div class="quick reveal">
-
-<h3>
-I want treatment.
-</h3>
-
-<p>
-Search confidentially for substance-use and
-mental-health treatment providers across the
-United States.
-</p>
-
-<div class="buttons">
-
-<a
-class="button primary"
-href="https://findtreatment.gov/"
-target="_blank"
-rel="noopener">
-
-Find Treatment
-</a>
-
-</div>
-
-</div>
-
-
-<div class="quick reveal">
-
-<h3>
-I'm supporting someone I love.
-</h3>
-
-<p>
-Learn how to talk with someone about substance
-use, find support and take care of yourself
-while helping them.
-</p>
-
-<div class="buttons">
-
-<a
-class="button secondary"
-href="https://www.samhsa.gov/find-support/helping-someone"
-target="_blank"
-rel="noopener">
-
-Family Resources
-</a>
-
-</div>
-
-</div>
-
-
-<div class="quick reveal">
-
-<h3>
-I'm in emotional crisis.
-</h3>
-
-<p>
-The 988 Suicide & Crisis Lifeline provides
-free, confidential crisis support.
-</p>
-
-<div class="buttons">
-
-<a
-class="button primary"
-href="tel:988">
-
-Call 988
-</a>
-
-<a
-class="button secondary"
-href="https://988lifeline.org/"
-target="_blank"
-rel="noopener">
-
-988 Lifeline
-</a>
-
-</div>
-
-</div>
-
-
-<div class="quick reveal">
-
-<h3>
-I just need someone to point me somewhere.
-</h3>
-
-<p>
-SAMHSA's National Helpline provides treatment
-information and referrals.
-</p>
-
-<div class="buttons">
-
-<a
-class="button primary"
-href="tel:18006624357">
-
-1-800-662-HELP
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TREATMENT -->
-
-<section class="section section-dark"
-         id="treatment">
-
-<div class="container">
-
-<div class="section-heading reveal">
-
-<div class="eyebrow">
-Treatment & Recovery
-</div>
-
-<h2>
-Recovery can start with one connection.
-</h2>
-
-<p>
-These resources can help connect people with
-treatment and recovery support.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-<div class="card reveal">
-
-<div class="card-label">
-National
-</div>
-
-<h3>
-FindTreatment.gov
-</h3>
-
-<p>
-Search for substance-use and mental-health
-treatment providers by location and service.
-</p>
-
-<a
-class="card-link"
-href="https://findtreatment.gov/"
-target="_blank"
-rel="noopener">
-
-Search Treatment →
-</a>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="card-label">
-24/7
-</div>
-
-<h3>
-SAMHSA National Helpline
-</h3>
-
-<p>
-Treatment information and referral support
-for individuals and families.
-</p>
-
-<a
-class="card-link"
-href="tel:18006624357">
-
-1-800-662-HELP →
-</a>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="card-label">
-Washington
-</div>
-
-<h3>
-WA Recovery Help Line
-</h3>
-
-<p>
-Free and confidential help connecting
-Washington residents with substance-use
-and recovery resources.
-</p>
-
-<a
-class="card-link"
-href="tel:18667891511">
-
-866-789-1511 →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WASHINGTON -->
-
-<section class="section"
-         id="washington">
-
-<div class="container">
-
-<div class="wa-box reveal">
-
-<div class="eyebrow">
-Washington • Seattle • King County
-</div>
-
-<h2>
-Help close to home.
-</h2>
-
-<p>
-Surviving Fentanyl is being built in Washington.
-These official state and King County resources
-provide local overdose prevention, naloxone,
-treatment and recovery information.
-</p>
-
-
-<div class="local-grid">
-
-<div class="local-item">
-
-<strong>
-WA Recovery Help Line
-</strong>
-
-<a href="tel:18667891511">
-866-789-1511
-</a>
-
-</div>
-
-
-<div class="local-item">
-
-<strong>
-King County Substance Use Services
-</strong>
-
-<a
-href="https://kingcounty.gov/en/dept/dchs/human-social-services/behavioral-health-recovery/substance-use-services"
-target="_blank"
-rel="noopener">
-
-Treatment & Recovery Resources →
-</a>
-
-</div>
-
-
-<div class="local-item">
-
-<strong>
-King County Naloxone & Harm Reduction
-</strong>
-
-<a
-href="https://kingcounty.gov/en/dept/dph/health-safety/safety-injury-prevention/overdose-prevention-response/get-help"
-target="_blank"
-rel="noopener">
-
-Find Local Help →
-</a>
-
-</div>
-
-
-<div class="local-item">
-
-<strong>
-Washington Naloxone
-</strong>
-
-<a
-href="https://doh.wa.gov/you-and-your-family/drug-user-health/overdose-education-naloxone-distribution"
-target="_blank"
-rel="noopener">
-
-Get Naloxone →
-</a>
-
-</div>
-
-
-<div class="local-item">
-
-<strong>
-King County Overdose Education
-</strong>
-
-<a
-href="https://kingcounty.gov/en/dept/dph/health-safety/safety-injury-prevention/overdose-prevention-response/learn"
-target="_blank"
-rel="noopener">
-
-Learn & Train →
-</a>
-
-</div>
-
-
-<div class="local-item">
-
-<strong>
-Crisis Support
-</strong>
-
-<a href="tel:988">
-Call or Text 988
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section class="cta">
-
-<div class="container reveal">
-
-<div class="eyebrow">
-Surviving Fentanyl
-</div>
-
-<h2>
-You are looking for help.<br>
-<span>That matters.</span>
-</h2>
-
-<p>
-There is no single path into recovery.
-The important part is finding the next
-connection, the next resource and the next
-reason to keep moving forward.
-</p>
-
-<div class="buttons">
-
-<a
-class="button primary"
-href="https://findtreatment.gov/"
-target="_blank"
-rel="noopener">
-
-Find Treatment
-</a>
-
-<a
-class="button secondary"
-href="index.html">
-
-Back to Home
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<div class="brand-name">
-SURVIVING
-<strong>FENTANYL</strong>
-</div>
-
-<p>
-Lived Experience. Real Recovery.<br>
-A Way Forward.
-</p>
-
-</div>
-
-
-<div>
-
-<div class="footer-title">
-Help
-</div>
-
-<ul class="footer-links">
-
-<li>
-<a href="#emergency">
-Overdose Emergency
-</a>
-</li>
-
-<li>
-<a href="#naloxone">
-Naloxone
-</a>
-</li>
-
-<li>
-<a href="#treatment">
-Treatment
-</a>
-</li>
-
-<li>
-<a href="#washington">
-Washington Resources
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-<div>
-
-<div class="footer-title">
-Contact
-</div>
-
-<ul class="footer-links">
-
-<li>
-<a href="mailto:michael@survivingfentanyl.org">
-michael@survivingfentanyl.org
-</a>
-</li>
-
-<li>
-<a href="tel:988">
-Crisis Support: 988
-</a>
-</li>
-
-<li>
-<a href="tel:18006624357">
-Treatment: 1-800-662-HELP
-</a>
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 Surviving Fentanyl. All rights reserved.
-
-<br><br>
-
-Surviving Fentanyl provides educational
-and resource information and is not a
-substitute for emergency, medical or
-professional treatment services.
-
-</div>
-
-</div>
-
-</footer>
-
-
-<a
-class="floating-help"
-href="#emergency">
-
-GET HELP NOW
-</a>
-
-
-<script>
-
-/* SCROLL PROGRESS */
-
-const progress =
-  document.getElementById("progress");
-
-function updateProgress() {
-
-  const top =
-    document.documentElement.scrollTop;
-
-  const height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-
-  progress.style.width =
-    (height > 0
-      ? (top / height) * 100
-      : 0) + "%";
-}
-
-window.addEventListener(
-  "scroll",
-  updateProgress,
-  { passive:true }
-);
-
-updateProgress();
-
-
-/* REVEALS */
-
-const reducedMotion =
-  window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-if (
-  !reducedMotion &&
-  "IntersectionObserver" in window
-) {
-
-  const observer =
-    new IntersectionObserver(
-      entries => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            entry.target
-              .classList
-              .add("visible");
-
-            observer.unobserve(
-              entry.target
-            );
-          }
-
-        });
-
-      },
-      { threshold:.10 }
-    );
-
-  document
-    .querySelectorAll(".reveal")
-    .forEach(el =>
-      observer.observe(el)
-    );
-
-} else {
-
-  document
-    .querySelectorAll(".reveal")
-    .forEach(el =>
-      el.classList.add("visible")
-    );
-}
-
-</script>
-
-</body>
+      <section class="emergency" id="emergency">
+        <div class="container">
+          <div class="emergency-box reveal">
+            <div class="emergency-top">Suspected Opioid Overdose</div>
+
+            <h2>Treat it like an emergency.</h2>
+
+            <p>
+              If someone cannot be awakened or is not breathing normally, call
+              911. Give naloxone if you have it and follow the 911 operator's
+              instructions.
+            </p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">01</div>
+
+                <strong> Call 911 </strong>
+
+                <p>Get emergency medical help immediately.</p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">02</div>
+
+                <strong> Give Naloxone </strong>
+
+                <p>
+                  Give naloxone if available and follow the product
+                  instructions. Additional doses may be needed.
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">03</div>
+
+                <strong> Support Breathing </strong>
+
+                <p>
+                  Follow the 911 operator's instructions and provide rescue
+                  breathing if instructed and able.
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">04</div>
+
+                <strong> Stay With Them </strong>
+
+                <p>
+                  Stay until emergency help arrives. If they are breathing
+                  normally, lay them on their side to help prevent choking.
+                </p>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <a href="tel:911" class="button emergency-button"> Call 911 </a>
+
+              <a
+                href="https://www.cdc.gov/stop-overdose/response/index.html"
+                target="_blank"
+                rel="noopener"
+                class="button secondary"
+              >
+                CDC Overdose Instructions
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NALOXONE -->
+
+      <section class="section section-dark" id="naloxone">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="eyebrow">Naloxone / Narcan</div>
+
+            <h2>Carry something that can save a life.</h2>
+
+            <p>
+              Naloxone is an opioid-overdose reversal medication. It can reverse
+              overdoses caused by opioids including fentanyl.
+            </p>
+          </div>
+
+          <div class="grid">
+            <div class="card reveal">
+              <div class="card-label">Learn</div>
+
+              <h3>What is naloxone?</h3>
+
+              <p>
+                Learn how naloxone works, the forms it comes in and why people
+                who use opioids — and the people around them — should consider
+                carrying it.
+              </p>
+
+              <a
+                class="card-link"
+                href="https://www.cdc.gov/stop-overdose/caring/naloxone.html"
+                target="_blank"
+                rel="noopener"
+              >
+                CDC Naloxone Guide →
+              </a>
+            </div>
+
+            <div class="card reveal">
+              <div class="card-label">Washington</div>
+
+              <h3>Get naloxone</h3>
+
+              <p>
+                Washington residents have multiple options for obtaining
+                naloxone, including pharmacies and community programs.
+              </p>
+
+              <a
+                class="card-link"
+                href="https://doh.wa.gov/you-and-your-family/drug-user-health/overdose-education-naloxone-distribution"
+                target="_blank"
+                rel="noopener"
+              >
+                Washington Naloxone →
+              </a>
+            </div>
+
+            <div class="card reveal">
+              <div class="card-label">Instructions</div>
+
+              <h3>Know how to use it</h3>
+
+              <p>
+                Read Washington State's instructions for recognizing an
+                overdose, calling 911, administering naloxone and providing
+                post-overdose care.
+              </p>
+
+              <a
+                class="card-link"
+                href="https://doh.wa.gov/you-and-your-family/drug-user-health/overdose-education-naloxone-distribution/naloxone-instructions"
+                target="_blank"
+                rel="noopener"
+              >
+                Naloxone Instructions →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT DO I NEED -->
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="eyebrow">Where Do I Start?</div>
+
+            <h2>Choose your next step.</h2>
+          </div>
+
+          <div class="quick-grid">
+            <div class="quick reveal">
+              <h3>I want treatment.</h3>
+
+              <p>
+                Search confidentially for substance-use and mental-health
+                treatment providers across the United States.
+              </p>
+
+              <div class="buttons">
+                <a
+                  class="button primary"
+                  href="https://findtreatment.gov/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Find Treatment
+                </a>
+              </div>
+            </div>
+
+            <div class="quick reveal" id="families">
+              <h3>I'm supporting someone I love.</h3>
+
+              <p>
+                Learn how to talk with someone about substance use, find support
+                and take care of yourself while helping them.
+              </p>
+
+              <div class="buttons">
+                <a
+                  class="button secondary"
+                  href="https://www.samhsa.gov/find-support/helping-someone"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Family Resources
+                </a>
+              </div>
+            </div>
+
+            <div class="quick reveal">
+              <h3>I'm in emotional crisis.</h3>
+
+              <p>
+                The 988 Suicide & Crisis Lifeline provides free, confidential
+                crisis support.
+              </p>
+
+              <div class="buttons">
+                <a class="button primary" href="tel:988"> Call 988 </a>
+
+                <a
+                  class="button secondary"
+                  href="https://988lifeline.org/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  988 Lifeline
+                </a>
+                <a class="button secondary" href="sms:988">Text 988</a>
+              </div>
+            </div>
+
+            <div class="quick reveal">
+              <h3>I just need someone to point me somewhere.</h3>
+
+              <p>
+                SAMHSA's National Helpline provides treatment information and
+                referrals.
+              </p>
+
+              <div class="buttons">
+                <a class="button primary" href="tel:18006624357">
+                  1-800-662-HELP
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TREATMENT -->
+
+      <section class="section section-dark" id="treatment">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="eyebrow">Treatment & Recovery</div>
+
+            <h2>Recovery can start with one connection.</h2>
+
+            <p>
+              These resources can help connect people with treatment and
+              recovery support.
+            </p>
+          </div>
+
+          <div class="grid">
+            <div class="card reveal">
+              <div class="card-label">National</div>
+
+              <h3>FindTreatment.gov</h3>
+
+              <p>
+                Search for substance-use and mental-health treatment providers
+                by location and service.
+              </p>
+
+              <a
+                class="card-link"
+                href="https://findtreatment.gov/"
+                target="_blank"
+                rel="noopener"
+              >
+                Search Treatment →
+              </a>
+            </div>
+
+            <div class="card reveal">
+              <div class="card-label">24/7</div>
+
+              <h3>SAMHSA National Helpline</h3>
+
+              <p>
+                Treatment information and referral support for individuals and
+                families.
+              </p>
+
+              <a class="card-link" href="tel:18006624357"> 1-800-662-HELP → </a>
+            </div>
+
+            <div class="card reveal">
+              <div class="card-label">Washington</div>
+
+              <h3>WA Recovery Help Line</h3>
+
+              <p>
+                Free and confidential help connecting Washington residents with
+                substance-use and recovery resources.
+              </p>
+
+              <a class="card-link" href="tel:18667891511"> 866-789-1511 → </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WASHINGTON -->
+
+      <section class="section" id="washington">
+        <div class="container">
+          <div class="wa-box reveal">
+            <div class="eyebrow">Washington • Seattle • King County</div>
+
+            <h2>Help close to home.</h2>
+
+            <p>
+              Surviving Fentanyl is being built in Washington. These official
+              state and King County resources provide local overdose prevention,
+              naloxone, treatment and recovery information.
+            </p>
+
+            <div class="local-grid">
+              <div class="local-item">
+                <strong> WA Recovery Help Line </strong>
+
+                <a href="tel:18667891511"> 866-789-1511 </a>
+              </div>
+
+              <div class="local-item">
+                <strong> King County Substance Use Services </strong>
+
+                <a
+                  href="https://kingcounty.gov/en/dept/dchs/human-social-services/behavioral-health-recovery/substance-use-services"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Treatment & Recovery Resources →
+                </a>
+              </div>
+
+              <div class="local-item">
+                <strong> King County Naloxone & Harm Reduction </strong>
+
+                <a
+                  href="https://kingcounty.gov/en/dept/dph/health-safety/safety-injury-prevention/overdose-prevention-response/get-help"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Find Local Help →
+                </a>
+              </div>
+
+              <div class="local-item">
+                <strong> Washington Naloxone </strong>
+
+                <a
+                  href="https://doh.wa.gov/you-and-your-family/drug-user-health/overdose-education-naloxone-distribution"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Get Naloxone →
+                </a>
+              </div>
+
+              <div class="local-item">
+                <strong> King County Overdose Education </strong>
+
+                <a
+                  href="https://kingcounty.gov/en/dept/dph/health-safety/safety-injury-prevention/overdose-prevention-response/learn"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Learn & Train →
+                </a>
+              </div>
+
+              <div class="local-item">
+                <strong> Crisis Support </strong>
+
+                <a href="tel:988"> Call 988 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+
+      <section class="cta">
+        <div class="container reveal">
+          <div class="eyebrow">Surviving Fentanyl</div>
+
+          <h2>
+            You are looking for help.<br />
+            <span>That matters.</span>
+          </h2>
+
+          <p>
+            There is no single path into recovery. The important part is finding
+            the next connection, the next resource and the next reason to keep
+            moving forward.
+          </p>
+
+          <div class="buttons">
+            <a
+              class="button primary"
+              href="https://findtreatment.gov/"
+              target="_blank"
+              rel="noopener"
+            >
+              Find Treatment
+            </a>
+
+            <a class="button secondary" href="index.html"> Back to Home </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="footer-brand" href="index.html"
+              >SURVIVING <span>FENTANYL</span></a
+            >
+            <p>Survive. Connect. Recover.</p>
+            <p class="small">
+              Rooted in lived experience. Built for connection.
+            </p>
+          </div>
+          <div>
+            <h2 class="footer-title">Find your next step</h2>
+            <ul class="footer-links">
+              <li><a href="resources.html">Resources / Help Center</a></li>
+              <li><a href="index.html#programs">Programs</a></li>
+              <li><a href="index.html#board">About / Board</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer-title">Build with us</h2>
+            <ul class="footer-links">
+              <li><a href="index.html#donate">Donate / Sponsorship</a></li>
+              <li><a href="index.html#volunteer">Volunteer</a></li>
+              <li>
+                <a href="mailto:michael@survivingfentanyl.org"
+                  >michael@survivingfentanyl.org</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            Surviving Fentanyl is developing toward nonprofit/501(c)(3) status
+            and is not currently IRS-recognized as a 501(c)(3) organization.
+          </p>
+          <p>
+            Educational and resource information does not replace emergency,
+            medical, or professional treatment services. For an emergency, call
+            911.
+          </p>
+          <p>
+            © 2026 Surviving Fentanyl. <span>Survive. Connect. Recover.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a class="floating-help" href="#emergency">Overdose emergency steps ↗</a>
+  </body>
 </html>
